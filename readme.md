@@ -19,6 +19,15 @@ An Azure Event Hub client that is easy to use and performs well. From a local ma
         deviceId: 1,
     });
 
+**Note**: The `deviceId` property is optional now. If the deviceId property is present, eventHubs will construct the URI in the following format:
+
+> https://{serviceNamespace}.servicebus.windows.net/{eventHubPath}/messages
+
+Otherwise, it uses the following format to construct the URI:
+
+> https://{serviceNamespace}.servicebus.windows.net/{eventHubPath}/publishers/{deviceId}/messages
+
+Please see the [Azure Event Hub Documentation](https://{serviceNamespace}.servicebus.windows.net/{eventHubPath}/publishers/{deviceId}/messages) for more details
 ### Other Usages
 
 When you initialize the event hubs client, it's advisable to use a SAS token in a production environment. This is a revokable key that is unique to the device. You can generate a token programatically, or [online using this form](http://eventhubssasgenerator.azurewebsites.net/).
