@@ -21,11 +21,11 @@ An Azure Event Hub client that is easy to use and performs well. From a local ma
 
 **Note**: The `deviceId` property is optional now. If the deviceId property is present, eventHubs will construct the URI in the following format:
 
-> https://{serviceNamespace}.servicebus.windows.net/{eventHubPath}/messages
+> https://{serviceNamespace}.servicebus.windows.net/{eventHubPath}/publishers/{deviceId}/messages
 
 Otherwise, it uses the following format to construct the URI:
 
-> https://{serviceNamespace}.servicebus.windows.net/{eventHubPath}/publishers/{deviceId}/messages
+> https://{serviceNamespace}.servicebus.windows.net/{eventHubPath}/messages
 
 Please see the [Azure Event Hub Documentation](https://{serviceNamespace}.servicebus.windows.net/{eventHubPath}/publishers/{deviceId}/messages) for more details
 ### Other Usages
